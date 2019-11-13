@@ -26,8 +26,8 @@ for track in tracks:
                 if os.path.isfile(fname):
                     print("{} already downloaded")
                 else:
-                    track.track.download(fname)                    
-            except ConnectionError:
+                    track.track.download(fname)
+            except Exception:
                 print("Network error occured")
     except IndexError:
         print("exception occured")
