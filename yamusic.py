@@ -24,7 +24,7 @@ for track in tracks:
             try:
                 fname = "{} - {}.mp3".format(artist, title)
                 if os.path.isfile(fname):
-                    print("{} already downloaded")
+                    print("{} already downloaded".format(fname))
                 else:
                     track.track.download(fname)
             except Exception:
