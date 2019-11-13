@@ -2,8 +2,8 @@
 import os
 from yandex_music.client import Client
 
-username = input("You're yandex login: ")
-password = input("You're password:")
+username = input("Your yandex login: ")
+password = input("Your password:")
 
 client = Client.from_credentials(username, password)
 
