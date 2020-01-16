@@ -29,7 +29,7 @@ print("done\n")
 print(candidates)
 
 for kv in candidates:
-    if(candidates[kv]) > 3:
+    if candidates[kv] > 3:
         print("this one gonna be banned: {}".format(kv))
         blocksection = blocksection + "$IPT -A INPUT -p tcp -s {}/32 -j DROP\n".format(kv)
 
