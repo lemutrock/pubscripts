@@ -17,13 +17,13 @@ with open(template) as fin:
 with open(filename) as fin:
     for line in fin:
         data = line.split(" ")
-        print(data)
-        print("ip: {} response code: {}".format(data[0], data[8]))
-        if int(data[8]) >= 400:
-            if data[0] in candidates:
-                candidates[data[0]] = candidates[data[0]] + 1
-            else:
-                candidates[data[0]] = 1
+        if len(data) > 1:
+            print("ip: {} response code: {}".format(data[0], data[8]))
+            if int(data[8]) >= 400:
+                if data[0] in candidates:
+                    candidates[data[0]] = candidates[data[0]] + 1
+                else:
+                    candidates[data[0]] = 1
 
 print("done\n")
 print(candidates)
