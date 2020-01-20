@@ -19,7 +19,7 @@ with open(filename) as fin:
         data = line.split(" ")
         print(data)
         print("ip: {} response code: {}".format(data[0], data[8]))
-        if data[8] == "404":
+        if int(data[8]) >= 400:
             if data[0] in candidates:
                 candidates[data[0]] = candidates[data[0]] + 1
             else:
