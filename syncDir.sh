@@ -35,7 +35,7 @@ echo $$ > "$mypid"
 
 trap "{ rm -f -- $mypid $inotifyPID; }" EXIT
 
-inotifywait $localDir --exclude "/.sync/" -e move,close_write,create,delete &
+inotifywait $localDir -r --exclude "/.sync/" -e move,close_write,create,delete &
 
 ipid=$!
 echo $ipid > "$inotifyPID"
