@@ -50,7 +50,7 @@ trap "{ rm -f -- $myPID $inotifyPID; }" EXIT
 startwatch()
 {
 # see man inotify
-# if need something to exclude, use --exclude "/.sync/"
+# if need something to exclude, use --exclude eg: --exclude "/.sync/"
 inotifywait $localDir -r -e move,close_write,create,delete &
 
 ipid=$!
